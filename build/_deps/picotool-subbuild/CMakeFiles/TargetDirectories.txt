@@ -1,3 +1,0 @@
-/home/fox/Code/raspberry-pi/hello-world/build/_deps/picotool-subbuild/CMakeFiles/picotool-populate.dir
-/home/fox/Code/raspberry-pi/hello-world/build/_deps/picotool-subbuild/CMakeFiles/edit_cache.dir
-/home/fox/Code/raspberry-pi/hello-world/build/_deps/picotool-subbuild/CMakeFiles/rebuild_cache.dir
