@@ -1,23 +1,24 @@
 #!/usr/bin/env fish
 
+function setup
+    git submodule update --init --recursive
+end
+
 function cleanup_build
-    echo "Cleanup build directory"
     if [ ! -d build ] 
         rm -r build
+    end
+    if [ -f compile_commands.json ]
+        rm compile_commands.json
     end
 end
 
 function setup_build
-    echo "Setup build directory"
-
     cleanup_build
-
     mkdir build
 end
 
 function build
-    echo "Build application"
-
     cd build
     cmake .. -DCMAKE_BUILD_TYPE=Release
     make -j 4
@@ -34,6 +35,7 @@ function copy_compile_commands
     cp build/compile_commands.json .
 end
 
+setup
 setup_build
 build
 list_files
