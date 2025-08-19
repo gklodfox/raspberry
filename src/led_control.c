@@ -17,7 +17,7 @@ static inline int xy_to_index(int x, int y) {
 
 void led_init(uint pin) {
     offset = pio_add_program(pio, &ws2812_program);
-    ws2812_program_init(pio, sm, offset, pin, 800000, true);
+    ws2812_program_init(pio, sm, offset, pin, 800000, false);
     led_clear();
     led_show();
 }
@@ -29,7 +29,7 @@ void led_set_pixel(int x, int y, uint8_t r, uint8_t g, uint8_t b) {
 }
 
 void led_clear(void) {
-    for (int i = 0; i < LED_COUNT; i++) leds[i] = 0;
+    for (int i = 0; i < LED_COUNT; i++) leds[i] = 0u;
 }
 
 void led_show(void) {
